@@ -1,0 +1,45 @@
+
+Database to be used: sqlite
+Python version to be used: Python 3.6.*
+
+Create 3 Python files, "main.py" "database.py" and "webrequests.py"
+
+1. In the file "webrequests.py" create a function (method) called "get_request", which takes one parameter (the URL that needs to send the request to)
+, sends a GET request, reads the response and returns only the first 10 characters of the response.	
+
+2. In the "database.py" create three functions:
+
+a) function "create_db" should create a new sqlite database and save the database file named "test.db" in a subfolder named "database"
+
+b) function "create_table" creates a new table in the database; the table should be called "TestTable" and should have the following fields:
+ - "id" (integer, primary key)
+ - "excerpt" (varchar 255)
+
+c) function "insert_into_db" - receives a parameter (string), inserts a new row into the table "TestTable" and saves the parameter under the field "excerpt"
+
+3. "main.py" puts it all together.
+
+Declare an array called "url_array" and add these 3 URLS:
+ http://www.sqlitetutorial.net/sqlite-python/creating-database/
+ https://stackoverflow.com/questions/2023893/python-3-get-http-page
+ http://www.sqlitetutorial.net/sqlite-python/create-tables/
+
+Create a fuinction called "run"
+
+Inside the function do the following:
+ - using the already created function (function "create_db" from "database.py"), create the database
+ - create the table "TestTable" using the function "create_table" from "database.py"
+ 
+In a loop, for each of the URLs in the "url_array" array do the following:
+
+ - send GET request to the URL using the "get_request" function from "webrequests.py" and return the first 10 characters of the response
+ - inserts a new row into the table "TestTable" and save the first 10 characters of the response under the field "excerpt"
+ - continue with the next URL untill all 3 URLs are processed
+
+
+Call the funciton "run" from code, so that when the "main.py" is run, the function runs
+
+Please make sure that you catch errors too and print them to screen (to the console) - use try/catch
+
+
+
